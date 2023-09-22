@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j792UwzNctgAb/UWWvPjFh6DIS6HkuyxiauVtzQcw1qlkRFbOhn1EcxI1nJkUqXJDtFNJZxZ2p8Xp0i52pikCw==",
+  "dgSpecHash": "3B9SQ0jTWwDPIkokj+5LM76dXvcrnhEvFIpPmotauJJqgIvJAq9sXTccNa/XfZfzoRA6JGXL82bGuN4hf+e8lA==",
   "success": true,
-  "projectFilePath": "E:\\.NET Project\\LarsTravel\\LarsTravel\\LarsTravel.csproj",
+  "projectFilePath": "E:\\MyProjectPtit\\LarsTravelApiNet\\LarsTravel\\LarsTravel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

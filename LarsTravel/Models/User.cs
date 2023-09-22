@@ -32,8 +32,13 @@ namespace LarsTravel.Models
 		[Required]
 		[StringLength(255)]
 		public string Address { get; set; }
-		[JsonIgnore]
+        [Required]
+        [StringLength(255)]
+        public string Role { get; set; }
+        [JsonIgnore]
 		public List<Comment> Comments { get; set; }
 		public List<Ticket> Tickets { get; set; }
-	}
+        [NotMapped]
+        public List<string> Otp { get; set; }
+    }
 }

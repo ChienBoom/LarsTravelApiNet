@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ResponseData = LarsTravel.Models.ResponseData;
 
 namespace LarsTravel.Controllers
@@ -143,7 +144,7 @@ namespace LarsTravel.Controllers
         }
 
         [HttpPost("/checkEmailExis")]
-        public IActionResult checkEmailExis([FromBody] Account value)
+        public async Task<IActionResult> checkEmailExis([FromBody] Account value)
         {
 			ResponseData response = new ResponseData();
             try

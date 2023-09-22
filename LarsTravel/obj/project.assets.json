@@ -6851,11 +6851,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\.NET Project\\LarsTravel\\LarsTravel\\LarsTravel.csproj",
+      "projectUniqueName": "E:\\MyProjectPtit\\LarsTravelApiNet\\LarsTravel\\LarsTravel.csproj",
       "projectName": "LarsTravel",
-      "projectPath": "E:\\.NET Project\\LarsTravel\\LarsTravel\\LarsTravel.csproj",
+      "projectPath": "E:\\MyProjectPtit\\LarsTravelApiNet\\LarsTravel\\LarsTravel.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\.NET Project\\LarsTravel\\LarsTravel\\obj\\",
+      "outputPath": "E:\\MyProjectPtit\\LarsTravelApiNet\\LarsTravel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
