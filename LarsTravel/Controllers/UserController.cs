@@ -49,21 +49,6 @@ namespace LarsTravel.Controllers
 			}
 		}
 
-        //[HttpGet("/search/{value}")]
-        //public IActionResult SearchUser(string value)
-        //{
-        //    try
-        //    {
-        //        List<User> users = _dataContext.User.Where(c => c.Name.Contains(value)).ToList();
-        //        if (users == null) return NotFound();
-        //        return Ok(users);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message.ToString());
-        //    }
-        //}
-
         [HttpPost]
 		public IActionResult Post([FromBody] User value)
 		{
@@ -170,6 +155,60 @@ namespace LarsTravel.Controllers
                 response.Message = ex.Message;
                 response.ResultData = null;
                 return BadRequest(response);
+            }
+        }
+
+        [HttpPost("/checkAccountLogin")]
+        public async Task<IActionResult> checkAccountLogin([FromBody] Account value)
+        {
+            ResponseData response = new ResponseData();
+            try
+            {
+                response.Success = true;
+                var User = _dataContext.User.FirstOrDefault(b => b.Username == value.Username);
+                if (User != null)
+                {
+					if(value.Password == User.Password)
+					{
+                        response.Message = "Success";
+                        response.ResultData = null;
+                        return Ok(response);
+                    }
+					else
+					{
+                        response.Message = "Faild";
+                        response.ResultData = null;
+                        return Ok(response);
+                    }
+                }
+                else
+                {
+                    response.Message = "Faild";
+                    response.ResultData = null;
+                    return Ok(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+                response.ResultData = null;
+                return BadRequest(response);
+            }
+        }
+
+        [HttpGet("search/{value}")]
+        public IActionResult SearchUser(string value)
+        {
+            try
+            {
+                List<User> users = _dataContext.User.Where(c => c.Name.Contains(value)).ToList();
+                if (users == null) return NotFound();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
             }
         }
 

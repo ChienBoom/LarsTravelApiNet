@@ -47,20 +47,20 @@ namespace LarsTravel.Controllers
 			}
 		}
 
-		//[HttpGet("/search/{value}")]
-		//public IActionResult SearchHotel(string value)
-		//{
-		//	try
-		//	{
-		//		List<Hotel> hotels = _dataContext.Hotel.Where(c => c.Name.Contains(value)).ToList();
-		//		if (hotels == null) return NotFound();
-		//		return Ok(hotels);
-		//	}
-		//	catch (Exception ex)
-		//	{
-		//		return BadRequest(ex.Message.ToString());
-		//	}
-		//}
+		[HttpGet("search/{value}")]
+		public IActionResult SearchHotel(string value)
+		{
+			try
+			{
+				List<Hotel> hotels = _dataContext.Hotel.Where(c => c.Name.Contains(value)).ToList();
+				if (hotels == null) return NotFound();
+				return Ok(hotels);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(ex.Message.ToString());
+			}
+		}
 
 		// POST api/<HotelController>
 		[HttpPost]

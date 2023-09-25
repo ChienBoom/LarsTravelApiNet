@@ -48,21 +48,6 @@ namespace LarsTravel.Controllers
 			}
 		}
 
-        //[HttpGet("/search/{value}")]
-        //public IActionResult SearchTicket(string value)
-        //{
-        //    try
-        //    {
-        //        List<Ticket> cities = _dataContext.Ticket.Where(c => c.Name.Contains(value)).ToList();
-        //        if (cities == null) return NotFound();
-        //        return Ok(cities);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message.ToString());
-        //    }
-        //}
-
         // POST api/<TicketController>
         [HttpPost]
 		public IActionResult Post([FromBody] Ticket value)
@@ -121,7 +106,22 @@ namespace LarsTravel.Controllers
 			{
 				return BadRequest(ex.Message.ToString());
 			}
-
 		}
+
+		//[HttpGet("search/{value}")]
+		//public IActionResult SearchTicket(string value)
+		//{
+		//	try
+		//	{
+		//		List<Ticket> cities = _dataContext.Ticket.Where(c => c.Name.Contains(value)).ToList();
+		//		if (cities == null) return NotFound();
+		//		return Ok(cities);
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		return BadRequest(ex.Message.ToString());
+		//	}
+		//}
+
 	}
 }

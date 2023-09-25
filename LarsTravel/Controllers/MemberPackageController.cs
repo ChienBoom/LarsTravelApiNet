@@ -47,21 +47,6 @@ namespace LarsTravel.Controllers
 			}
 		}
 
-		//[HttpGet("/search/{value}")]
-		//public IActionResult SearchMemberPackage(string value)
-		//{
-		//	try
-		//	{
-		//		List<MemberPackage> memberPackages = _dataContext.MemberPackage.Where(c => c.Name.Contains(value)).ToList();
-		//		if (memberPackages == null) return NotFound();
-		//		return Ok(memberPackages);
-		//	}
-		//	catch (Exception ex)
-		//	{
-		//		return BadRequest(ex.Message.ToString());
-		//	}
-		//}
-
 		// POST api/<MemberPackageController>
 		[HttpPost]
 		public IActionResult Post([FromBody] MemberPackage value)
@@ -120,7 +105,22 @@ namespace LarsTravel.Controllers
 			{
 				return BadRequest(ex.Message.ToString());
 			}
-
 		}
+
+		[HttpGet("search/{value}")]
+		public IActionResult SearchMemberPackage(string value)
+		{
+			try
+			{
+				List<MemberPackage> memberPackages = _dataContext.MemberPackage.Where(c => c.Name.Contains(value)).ToList();
+				if (memberPackages == null) return NotFound();
+				return Ok(memberPackages);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(ex.Message.ToString());
+			}
+		}
+
 	}
 }

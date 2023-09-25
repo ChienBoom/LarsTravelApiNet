@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LarsTravel.Controllers
@@ -105,7 +106,22 @@ namespace LarsTravel.Controllers
 			{
 				return BadRequest(ex.Message.ToString());
 			}
-
 		}
-	}
+
+        //[HttpGet("search/{value}")]
+        //public IActionResult SearchTicketDetail(string value)
+        //{
+        //    try
+        //    {
+        //        List<Ticket> cities = _dataContext.TicketDetail.Where(c => c.Name.Contains(value)).ToList();
+        //        if (cities == null) return NotFound();
+        //        return Ok(cities);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message.ToString());
+        //    }
+        //}
+
+    }
 }

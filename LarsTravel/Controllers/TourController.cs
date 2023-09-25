@@ -48,21 +48,6 @@ namespace LarsTravel.Controllers
 			}
 		}
 
-        //[HttpGet("/search/{value}")]
-        //public IActionResult SearchTour(string value)
-        //{
-        //    try
-        //    {
-        //        List<Tour> tours = _dataContext.Tour.Where(c => c.Name.Contains(value)).ToList();
-        //        if (tours == null) return NotFound();
-        //        return Ok(tours);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message.ToString());
-        //    }
-        //}
-
         // POST api/<TourController>
         [HttpPost]
 		public IActionResult Post([FromBody] Tour value)
@@ -121,7 +106,22 @@ namespace LarsTravel.Controllers
 			{
 				return BadRequest(ex.Message.ToString());
 			}
+        }
 
+		[HttpGet("search/{value}")]
+		public IActionResult SearchTour(string value)
+		{
+			try
+			{
+				List<Tour> tours = _dataContext.Tour.Where(c => c.Name.Contains(value)).ToList();
+				if (tours == null) return NotFound();
+				return Ok(tours);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(ex.Message.ToString());
+			}
 		}
+
 	}
 }
