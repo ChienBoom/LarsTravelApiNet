@@ -171,7 +171,7 @@ namespace LarsTravel.Controllers
 					if(value.Password == User.Password)
 					{
                         response.Message = "Success";
-                        response.ResultData = null;
+                        response.ResultData = User.Role;
                         return Ok(response);
                     }
 					else
